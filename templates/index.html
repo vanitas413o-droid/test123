@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>簡易部落格</title>
+</head>
+<body>
+    <h1>我的部落格</h1>
+    <a href="/new">新增文章</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ url_for('show_post', post_id=post.id) }}">
+                    {{ post.title }} - {{ post.author }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
